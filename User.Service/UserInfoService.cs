@@ -11,6 +11,16 @@ namespace User.Service
             _userInfoRepository = userInfoRepository;
         }
 
+        public UserInfo getUserInfoByEmail(string email)
+        {
+            return _userInfoRepository.getUserInfoByEmail(email);
+        }
+
+        public void saveChanges()
+        {
+            _userInfoRepository.saveChanges();
+        }
+
         public List<UserInfo> getUserInfos()
         {
             return _userInfoRepository.Get();

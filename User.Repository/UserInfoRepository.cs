@@ -10,13 +10,39 @@ namespace User.Repository
         {
             _context = context;
         }
-        
+
 
         public List<UserInfo> Get()
         {
             try
             {
                 return _context.UserInfos.ToList();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public UserInfo getUserInfoByEmail(string email)
+        {
+            try
+            {
+                return _context.UserInfos.Where(item => item.Email.Equals(email)).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void saveChanges()
+        {
+            try
+            {
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
