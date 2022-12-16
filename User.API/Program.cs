@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using User.API.Handler;
 using User.Repository;
 using User.Service;
 
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<UserInfoDbContext>(o => o.UseNpgsql(builder.Config
 
 builder.Services.AddScoped<UserInfoService>();
 builder.Services.AddScoped<UserInfoRepository>();
+builder.Services.AddScoped<TokenCreationHandler>();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -25,11 +25,11 @@ namespace User.Repository
             }
         }
 
-        public UserInfo getUserInfoByEmail(string email)
+        public async Task<UserInfo> getUserInfoByEmail(string email)
         {
             try
             {
-                return _context.UserInfos.Where(item => item.Email.Equals(email)).FirstOrDefault();
+                return await _context.UserInfos.Where(item => item.Email.Equals(email)).FirstOrDefaultAsync();
             }
             catch (Exception ex)
             {
@@ -79,12 +79,12 @@ namespace User.Repository
             }
         }
 
-        public void Update(UserInfo userInfo)
+        public async Task Update(UserInfo userInfo)
         {
             try
             {
                 _context.Entry(userInfo).State = EntityState.Modified;
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
