@@ -8,6 +8,6 @@ namespace User.Core
 {
     public class Product
     {
-        public string name { get; set; }
+        public string Name { get; set; }
     }
 }

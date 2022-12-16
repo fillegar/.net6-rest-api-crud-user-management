@@ -17,10 +17,10 @@ namespace User.API.Controllers
             return new List<Product>()
            {
                 new Product(){
-                name = "admin product1"
+                Name = "admin product1"
                 },
                 new Product(){
-                    name= "admin product2"
+                    Name= "admin product2"
                 }
            };
         }
@@ -33,10 +33,10 @@ namespace User.API.Controllers
             return new List<Product>()
             {
                 new Product(){
-                name = "super admin product1"
+                Name = "super admin product1"
                 },
                 new Product(){
-                    name= "super admin product2"
+                    Name= "super admin product2"
                 }
             };
         }
@@ -48,10 +48,10 @@ namespace User.API.Controllers
             return new List<Product>()
             {
                 new Product(){
-                name = "basic user product1"
+                Name = "basic user product1"
                 },
                 new Product(){
-                    name= "basic user product2"
+                    Name= "basic user product2"
                 }
             };
         }
