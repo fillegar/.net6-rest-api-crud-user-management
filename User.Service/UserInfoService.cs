@@ -11,6 +11,11 @@ namespace User.Service
             _userInfoRepository = userInfoRepository;
         }
 
+        public async Task<UserInfo> getUserInfoByEmail(string email)
+        {
+            return await _userInfoRepository.getUserInfoByEmail(email);
+        }
+
         public List<UserInfo> getUserInfos()
         {
             return _userInfoRepository.Get();
@@ -21,9 +26,9 @@ namespace User.Service
             _userInfoRepository.Add(userInfo);
         }
 
-        public void updateUserInfo(UserInfo userInfo)
+        public async Task updateUserInfo(UserInfo userInfo)
         {
-            _userInfoRepository.Update(userInfo);
+            await _userInfoRepository.Update(userInfo);
         }
 
         public void removeUserInfo(UserInfo userInfo)

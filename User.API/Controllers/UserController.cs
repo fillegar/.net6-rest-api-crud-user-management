@@ -8,6 +8,7 @@ namespace User.API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        
         private readonly UserInfoService _userInfoService;
 
         public UserController(UserInfoService userInfoService)
