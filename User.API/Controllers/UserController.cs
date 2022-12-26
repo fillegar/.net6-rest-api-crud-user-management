@@ -4,6 +4,7 @@ using User.Service;
 
 namespace User.API.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase

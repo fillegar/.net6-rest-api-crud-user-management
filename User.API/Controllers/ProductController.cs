@@ -5,6 +5,7 @@ using User.Core;
 
 namespace User.API.Controllers
 {
+
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]

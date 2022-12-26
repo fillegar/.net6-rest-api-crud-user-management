@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using User.API.Handler;
 using User.Core;
@@ -7,6 +8,7 @@ using User.Service;
 
 namespace User.API.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class LoginController : ControllerBase
@@ -18,6 +20,8 @@ namespace User.API.Controllers
             this.userInfoService = userInfoService;
             this.tokenHandler = tokenHandler;
         }
+
+        [AllowAnonymous]
         [HttpPost]
         public async Task<Token> Login([FromForm] UserLogin userLogin)
         {
